@@ -1,4 +1,5 @@
-/* This is how you comment code */
+/* This is how you comment code 
+with multiple lines */
 // This also works. If you highlight code and press Ctrl + / then it will comment all the highlighted lines
 fun main() {
     println(fib(5))
