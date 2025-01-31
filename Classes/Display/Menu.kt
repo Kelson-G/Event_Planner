@@ -1,35 +1,47 @@
 package display
 
 // This is where the main program runs for the Event Planner
-class Menu(val title: String, val options: Map<String: String>) {
+class Menu(title: String, options: Map<String, String>) {
 
     val _displayText: String
+    val _title: String = title
+    val _options: Map<String, String> = options
 
     init {
-        _displayText = _initDisplay()
+        _displayText = _initDisplay(_title, _options)
     }
 
-    // Input loop for Event Planner
-    fun _InitDisplay(val title: String, options: Map<String: String>) {
+    // This function generates the text for _displayText
+    fun _initDisplay(title: String, options: Map<String, String>): String {
         var displayText: String = ""
-        displayText: String += """
+        displayText += """
         |---
         |$title
         |---
         """.trimMargin()
-        for ((key: String, value: String) in options: Map<String: String>) {
-            
+        for ((key: String, value: String) in options) {
+            displayText += """
+            | - [$key]: $value
+            """.trimMargin()
+        }
+        displayText += """
+        |
+        |Select an option:
+        """.trimMargin()
+        return displayText
+    }
+
+    fun Display(): String {
+        
+        while (true) {
+            println(_displayText)
+            var option: String = readLine()!!
+            if (_options.containsKey(option))
+                return option
+            else {
+                println("$option: Invalid Option")
+            }
         }
     }
 
-    fun _InitMenuDict() {
-
-    }
-
-    fun Display() {
-        
-    }
-    fun Execute() {
-
-    }
 }
