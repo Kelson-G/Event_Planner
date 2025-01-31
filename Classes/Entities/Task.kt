@@ -1,3 +1,5 @@
+package entities
+
 //a title, a description of said task, time it should take, and a start/end time
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
