@@ -1,4 +1,4 @@
-package entities
+package main.classes.entities
 
 //a title, a description of said task, time it should take, and a start/end time
 import java.time.LocalDateTime

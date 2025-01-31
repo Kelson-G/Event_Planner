@@ -1,5 +1,5 @@
 package main
-import classes.Program
+import main.classes.Program
 
 // Main to run the program
 fun main() {
@@ -25,10 +25,3 @@ kotlinc (Get-ChildItem -Path . -Recurse -Filter "*.kt").FullName -include-runtim
 java -jar main.jar
 
 ************************************************************************/ 
-
-
-
-// // distributes work of the event by the number of contributers 
-// fun distribute_work() {
-//     continue
-// }

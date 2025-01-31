@@ -1,4 +1,4 @@
-package display
+package main.classes.display
 
 // This is where the main program runs for the Event Planner
 class Menu(title: String, options: Map<String, String>) {
@@ -21,10 +21,12 @@ class Menu(title: String, options: Map<String, String>) {
         """.trimMargin()
         for ((key: String, value: String) in options) {
             displayText += """
+            |
             | - [$key]: $value
             """.trimMargin()
         }
         displayText += """
+        |
         |
         |Select an option:
         """.trimMargin()
