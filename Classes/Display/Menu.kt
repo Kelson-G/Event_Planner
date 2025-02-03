@@ -28,7 +28,7 @@ class Menu(title: String, options: Map<String, String>) {
         displayText += """
         |
         |
-        |Select an option:
+        |Select an option [select by typing square braket value]:
         """.trimMargin()
         return displayText
     }
