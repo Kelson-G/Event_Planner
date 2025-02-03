@@ -28,7 +28,7 @@ data class User(
 fun writeCsv(file: File, newdata: User) {
     BufferedWriter(FileWriter(file, true)).use { writer -> // Append mode
         writer.write("${newdata.id},${newdata.name},\"${newdata.email}\"")
-        writer.newLine()
+        writer.newLine() 
     }
 }
 
