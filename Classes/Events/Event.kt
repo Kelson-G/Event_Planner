@@ -1,5 +1,7 @@
 package main.classes.events
 
+import classes.entities.Task
+
 // An Event. Also the Parent Class to all the future ones
 open class Event (
     var _title: String, 
@@ -7,15 +9,15 @@ open class Event (
     var _date: String, 
     var _time: String, 
     var _address: String) {
-    private var _tasks = mutableListOf<String>()
+    private var _tasks = mutableListOf<Task>()
 
     // Function to add a task to the tasks list. No return variable
-    fun addTask(task: String) {
+    fun addTask(task: Task) {
         _tasks.add(task)
     }
 
     // Function to return the entire list of tasks
-    fun getTasks(): List<String> {
+    fun getTasks(): List<Task> {
         return _tasks
     }
 
