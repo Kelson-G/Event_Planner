@@ -15,7 +15,7 @@ NOTE: ALL files must be error free in order for the compile command to work
 
 Mac OS (zsh):
 
-kotlinc $(find . -name "*.kt") -include-runtime -d main.jar
+
 java -jar main.jar
 
 
