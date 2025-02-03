@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // package entities
 package classes.entities
+=======
+package main.classes.entities
+>>>>>>> c397c9144a38752607ca6412b85b5a46cac35287
 
 //a title, a description of said task, time it should take, and a start/end time
 import java.time.LocalDateTime

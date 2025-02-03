@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 package classes.events
 
 import classes.entities.Task
+=======
+package main.classes.events
+>>>>>>> c397c9144a38752607ca6412b85b5a46cac35287
 
 // An Event. Also the Parent Class to all the future ones
 open class Event (
