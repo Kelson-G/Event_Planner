@@ -1,8 +1,10 @@
-package entities
+// package entities
+package classes.entities
 
 //a title, a description of said task, time it should take, and a start/end time
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+// import Classes.Events.Event
 
 // Class to represent a Task
 class Task(val description: String, val startTime: LocalDateTime, val endTime: LocalDateTime) {
