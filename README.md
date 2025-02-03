@@ -2,33 +2,28 @@
 
 ## Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+Learing about kotlin and how it works as a programming language, including how the syntax works, how we can import classes across classes, and how their parent/child system works.
 
-{Provide a description of the software that you wrote to demonstrate the Kotlin language.}
+It will be an event planner; it allows an event planner/organizer to organize their events, divide tasks, and provide templates for flyers, emails, etc.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+Making event planning easier for students who might have other things on their plate.
 
 ## Development Environment
 
-{Describe the tools that you used to develop the software}
+We used the Code runner extention for vs code to make sure that we don't have any running errors, the Kotlin extention to see the files that are written in kotlin, and Kotlin Formatter to format the folder so that we can have some organization.
 
-{Describe the programming language that you used and any libraries.}
+The Kotlin language is an object-oriented language that is used for general application development including Android mobile app development. It is based on the Java language. Kotlin was designed to provide improvements to the Java language while still supporting the Java libraries. We used some basic Java libraries.
 
 ## Useful Websites
 
 {Make a list of websites that you found helpful in this project}
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [W3School: Kotlin Tutorial](https://www.w3schools.com/KOTLIN/index.php)
+- [Kotlin](https://kotlinlang.org/)
 
 ## Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1
-- Item 2
-- Item 3
+- Eventually make it into an app with the cloud database
+- Fix any errors that hide with our current testing
