@@ -1,5 +1,7 @@
 package main.classes
 import main.classes.display.Menu
+// import main.classes.entities.Task
+import main.classes.events.Event
 
 // This is where the main program runs for the Event Planner
 class Program() {
@@ -77,9 +79,55 @@ class Program() {
         }
     }
 
+    //Luke Hill
     fun createEvent() {
-        println("This will eventually be used to create an event")
-        println("Type anything to continue")
-        var option: String = readLine()!!
+        val scanner = java.util.Scanner(System.`in`)
+
+        // Get event title
+        print("Enter the event title: ")
+        val eventTitle = scanner.nextLine()
+
+        // Get description
+        print("Enter the description: ")
+        val eventDescription = scanner.nextLine()
+
+        // Get date
+        print("Enter the date: ")
+        val eventDate = scanner.nextLine()
+
+        // Get time
+        print("Enter the event's time: ")
+        val eventTime = scanner.nextLine()
+
+        // Get address
+        print("Enter the address for the event: ")
+        val eventAddress = scanner.nextLine()
+
+        // Create Event
+        val event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+
+        // Get number of tasks
+        print("Enter the number of tasks: ")
+        val taskCount = scanner.nextInt()
+        scanner.nextLine() // Consume newline
+
+        // Get task details
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+        for (i in 1..taskCount) {
+            print("Enter description for task $i: ")
+            val description = scanner.nextLine()
+            print("Enter start time for task $i (yyyy-MM-dd HH:mm): ")
+            val startTime = LocalDateTime.parse(scanner.nextLine(), formatter)
+            print("Enter end time for task $i (yyyy-MM-dd HH:mm): ")
+            val endTime = LocalDateTime.parse(scanner.nextLine(), formatter)
+
+            event.addTask(Task(description, startTime, endTime))
+        }
+
+        // Display event details
+        println("\nEvent Details:")
+        event.displayEventDetails()
     }
+
+
 }

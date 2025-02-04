@@ -7,6 +7,13 @@ fun main() {
     program.run()
 }
 
+/*
+Current Files Compiling:
+
+kotlinc main.kt Classes/Program.kt Classes/Display/Menu.kt Classes/Events/Event.kt Classes/Entities/Task.kt -include-runtime -d main2.jar
+
+*/ 
+
 /***********************************************************************
 
 Commands for compiling and running all .kt files together in one project

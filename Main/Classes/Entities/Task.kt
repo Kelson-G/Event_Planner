@@ -31,34 +31,3 @@ class Event(val title: String) {
         }
     }
 }
-
-fun main() {
-    val scanner = java.util.Scanner(System.`in`)
-
-    // Get event title
-    print("Enter the event title: ")
-    val eventTitle = scanner.nextLine()
-    val event = Event(eventTitle)
-
-    // Get number of tasks
-    print("Enter the number of tasks: ")
-    val taskCount = scanner.nextInt()
-    scanner.nextLine() // Consume newline
-
-    // Get task details
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
-    for (i in 1..taskCount) {
-        print("Enter description for task $i: ")
-        val description = scanner.nextLine()
-        print("Enter start time for task $i (yyyy-MM-dd HH:mm): ")
-        val startTime = LocalDateTime.parse(scanner.nextLine(), formatter)
-        print("Enter end time for task $i (yyyy-MM-dd HH:mm): ")
-        val endTime = LocalDateTime.parse(scanner.nextLine(), formatter)
-
-        event.addTask(Task(description, startTime, endTime))
-    }
-
-    // Display event details
-    println("\nEvent Details:")
-    event.displayEventDetails()
-}
