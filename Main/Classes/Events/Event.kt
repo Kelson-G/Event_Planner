@@ -1,4 +1,4 @@
-package main.classes.events
+package classes.events
 
 import classes.entities.Task
 
