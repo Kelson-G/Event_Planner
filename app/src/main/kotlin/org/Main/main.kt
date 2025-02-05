@@ -1,5 +1,6 @@
-package main
-import main.classes.Program
+package org.main
+
+import org.main.Program
 
 // Main to run the program
 fun main() {

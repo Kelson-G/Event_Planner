@@ -1,4 +1,4 @@
-package main.classes.display
+package org.display
 
 // This is where the main program runs for the Event Planner
 class Menu(title: String, options: Map<String, String>) {

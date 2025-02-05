@@ -1,9 +1,9 @@
-package main.classes
+package org.main
 
 // Import Classes
-import main.classes.assets.Menu
-import main.classes.assets.Task
-import main.classes.assets.Event
+import org.display.Menu
+import org.entities.Task
+import org.events.Event
 
 // Import Modules
 import java.time.LocalDateTime

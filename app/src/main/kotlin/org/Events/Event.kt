@@ -1,4 +1,6 @@
-package main.classes.assets
+package org.events
+
+import org.entities.Task
 
 // An Event. Also the Parent Class to all the future ones
 open class Event (
