@@ -1,11 +1,18 @@
 package main.classes
-import main.classes.display.Menu
-// import main.classes.entities.Task
-import main.classes.events.Event
+
+// Import Classes
+import main.classes.assets.Menu
+import main.classes.assets.Task
+import main.classes.assets.Event
+
+// Import Modules
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 // This is where the main program runs for the Event Planner
 class Program() {
 
+    // Menu
     val mainTitle: String = """
     -------------
     Event Planner
@@ -15,33 +22,14 @@ class Program() {
     val mainMenu: Menu = Menu(
         title = "MAIN MENU",
         options = mapOf(
-            "1" to "View Templates",
+            "1" to "Create Event",
             "2" to "View Events",
-            "3" to "Option 3",
             "e" to "exit"
         )
     )
 
-    val subMenuOne: Menu = Menu(
-        title = "Templates",
-        options = mapOf(
-            "1" to "Template One",
-            "2" to "Template Two",
-            "3" to "Default",
-            "e" to "back to menu"
-        )
-    )
-
-
-    val subMenuTwo: Menu = Menu(
-        title = "Events",
-        options = mapOf(
-            "1" to "Group Date",
-            "2" to "FHE",
-            "3" to "Birthday Party",
-            "e" to "back to menu"
-        )
-    )
+    // Events List
+    val savedEvents = mutableListOf<Event>()
 
     // Input loop for Event Planner
     fun run() {
@@ -52,25 +40,15 @@ class Program() {
             var option: String = mainMenu.Display()
 
             if (option == "1") {
-                while (true) {
-                    option = subMenuOne.Display()
-                    if (option == "e") {
-                        break
-                    } else {
-                        println(option)
-                    }                
-                }
+                savedEvents.add(createEvent())
             } else if (option == "2") {
-                while (true) {
-                    option = subMenuTwo.Display()
-                    if (option == "e") {
-                        break
-                    } else {
-                        println(option)
-                    }                
+                if (savedEvents.isEmpty()) {
+                    println("No events have been created yet")
+                } else {
+                    for (event in savedEvents) {
+                        event.displayEventDetails()
+                    }
                 }
-            } else if (option == "3") {
-                createEvent()
             } else if (option == "e") {
                 println("Exit Worked!!!!!!")
                 println("Goodbye :)")
@@ -80,7 +58,7 @@ class Program() {
     }
 
     //Luke Hill
-    fun createEvent() {
+    fun createEvent(): Event {
         val scanner = java.util.Scanner(System.`in`)
 
         // Get event title
@@ -127,7 +105,7 @@ class Program() {
         // Display event details
         println("\nEvent Details:")
         event.displayEventDetails()
+
+        return event
     }
-
-
 }
