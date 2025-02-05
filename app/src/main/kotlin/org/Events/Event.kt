@@ -1,6 +1,4 @@
-package org.events
-
-import org.entities.Task
+package main.classes.assets
 
 // An Event. Also the Parent Class to all the future ones
 open class Event (
@@ -25,6 +23,16 @@ open class Event (
     fun getDetails(): List<String> {
         val details = mutableListOf(_title, _description, _date, _time, _address)
         return details
+    }
+
+    fun displayEventDetails() {
+        println("Event: $_title")
+        if (_tasks.isEmpty()) {
+            println("No tasks added yet.")
+        } else {
+            println("Tasks:")
+            _tasks.forEach { println(it) }
+        }
     }
 
 }
