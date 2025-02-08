@@ -8,8 +8,8 @@ class Wedding(
     date: String,
     time: String,
     address: String,
-    var _couple: String) : Event(title, description, date, time, address) {
-    override fun getDetails(): List<String> {
+    var couple: String) : Event(title, description, date, time, address) {
+    fun getWeddingDetails(): List<String> {
         val details = mutableListOf(title, description, date, time, address, couple)
         return details
     }
