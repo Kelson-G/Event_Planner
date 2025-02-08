@@ -63,50 +63,58 @@ class Program() {
     //Luke Hill
     fun createEvent(): Event {
         val scanner = java.util.Scanner(System.`in`)
-        val event: Event // Declare here to use later
-    
+        val event: Event
+
         // Choose event
         print("Select an event type (0 = Normal Event, 1 = FHE, 2 = Lecture, 3 = Wedding): ")
         val eventSelection = scanner.nextLine()
-    
+
         // Get event title
         print("Enter the event title: ")
         val eventTitle = scanner.nextLine()
-    
+
         // Get description
         print("Enter the description: ")
         val eventDescription = scanner.nextLine()
-    
+
         // Get date
         print("Enter the date: ")
         val eventDate = scanner.nextLine()
-    
+
         // Get time
         print("Enter the event's time: ")
         val eventTime = scanner.nextLine()
-    
+
         // Get address
         print("Enter the address for the event: ")
         val eventAddress = scanner.nextLine()
-    
-        // Create Event
-        event = when (eventSelection) {
-            "0" -> Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-            "1" -> FHE(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-            "2" -> {
-                print("Enter the speaker name: ")
-                val eventSpeaker = scanner.nextLine()
-                print("Enter the lecture topic: ")
-                val eventTopic = scanner.nextLine()
-                Lecture(eventSpeaker, eventTopic, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-            }
-            "3" -> {
-                print("Enter the couple's names: ")
-                val eventCouple = scanner.nextLine()
-                Wedding(eventCouple, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-            }
-            else -> throw IllegalArgumentException("Invalid event type")
 
+        // Create Event
+        if (eventSelection == "0")
+        {
+            event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == "1")
+        {
+            event = FHE(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == "2")
+        {
+            // Get speaker name
+            print("Enter the speaker name: ")
+            val eventSpeaker = scanner.nextLine()
+
+            // Get lecture topic
+            print("Enter the lecture topic: ")
+            val eventTopic = scanner.nextLine()
+
+            event = Lecture(eventSpeaker, eventTopic, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == "3")
+        {
+            // Get couple's names
+            print("Enter the couple's names: ")
+            val eventCouple = scanner.nextLine()
+
+            event = Wedding(eventCouple, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        }
 
         // Get number of tasks
         print("Enter the number of tasks: ")
