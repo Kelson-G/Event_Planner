@@ -89,13 +89,13 @@ class Program() {
         val eventAddress = scanner.nextLine()
 
         // Create Event
-        if (eventSelection == 0)
+        if (eventSelection == "0")
         {
             val event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-        } else if (eventSelection == 1)
+        } else if (eventSelection == "1")
         {
             val event = FHE(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-        } else if (eventSelection == 2)
+        } else if (eventSelection == "2")
         {
             // Get speaker name
             print("Enter the speaker name: ")
@@ -106,7 +106,7 @@ class Program() {
             val eventTopic = scanner.nextLine()
 
             val event = Lecture(eventSpeaker, eventTopic, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-        } else if (eventSelection == 3)
+        } else if (eventSelection == "3")
         {
             // Get couple's names
             print("Enter the couple's names: ")
