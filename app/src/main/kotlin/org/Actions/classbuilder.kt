@@ -52,7 +52,3 @@ fun main() {
 
 }
 
-fun test() {
-    return "Have a good day"
-}
-//Test
