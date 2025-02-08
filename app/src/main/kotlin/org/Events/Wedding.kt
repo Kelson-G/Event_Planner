@@ -2,9 +2,15 @@ package org.events
 
 import org.events.Event
 
-class Wedding(var _couple: String) : Event(_title, _description, _date, _time, _address) {
+class Wedding(
+    title: String,
+    description: String,
+    date: String,
+    time: String,
+    address: String,
+    var _couple: String) : Event(title, description, date, time, address) {
     override fun getDetails(): List<String> {
-        val details = mutableListOf(_title, _description, _date, _time, _address, _couple)
+        val details = mutableListOf(title, description, date, time, address, couple)
         return details
     }
 }
