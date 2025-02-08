@@ -53,7 +53,6 @@ class Program() {
                     }
                 }
             } else if (option == "e") {
-                println("Exit Worked!!!!!!")
                 println("Goodbye :)")
                 break
             }
