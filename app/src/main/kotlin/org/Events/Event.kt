@@ -28,7 +28,7 @@ open class Event (
     }
 
     fun displayEventDetails() {
-        println("Event: $_title")
+        println("Event: $title")
         if (tasks.isEmpty()) {
             println("No tasks added yet.")
         } else {
