@@ -4,6 +4,9 @@ package org.main
 import org.display.Menu
 import org.entities.Task
 import org.events.Event
+import org.events.FHE
+import org.events.Lecture
+import org.events.Wedding
 
 // Import Modules
 import java.time.LocalDateTime
@@ -61,6 +64,10 @@ class Program() {
     fun createEvent(): Event {
         val scanner = java.util.Scanner(System.`in`)
 
+        // Choose event
+        print("Select an event type (0 = Normal Event, 1 = FHE, 2 = Lecture, 3 = Wedding): ")
+        val eventSelection = scanner.nextLine()
+
         // Get event title
         print("Enter the event title: ")
         val eventTitle = scanner.nextLine()
@@ -82,7 +89,31 @@ class Program() {
         val eventAddress = scanner.nextLine()
 
         // Create Event
-        val event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        if (eventSelection == 0)
+        {
+            val event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == 1)
+        {
+            val event = FHE(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == 2)
+        {
+            // Get speaker name
+            print("Enter the speaker name: ")
+            val eventSpeaker = scanner.nextLine()
+
+            // Get lecture topic
+            print("Enter the lecture topic: ")
+            val eventTopic = scanner.nextLine()
+
+            val event = Lecture(eventSpeaker, eventTopic, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else if (eventSelection == 3)
+        {
+            // Get couple's names
+            print("Enter the couple's names: ")
+            val eventCouple = scanner.nextLine()
+
+            val event = Wedding(eventCouple, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        }
 
         // Get number of tasks
         print("Enter the number of tasks: ")
