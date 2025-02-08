@@ -27,3 +27,4 @@ The Kotlin language is an object-oriented language that is used for general appl
 
 - Eventually make it into an app with the cloud database
 - Fix any errors that hide with our current testing
+- Add template builder class
