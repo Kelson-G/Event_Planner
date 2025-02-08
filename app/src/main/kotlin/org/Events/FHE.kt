@@ -1,6 +1,11 @@
-package classes.events
+package org.events
 
-import classes.events.Event
+import org.events.Event
 
-class FHE() : Event(_title, _description, _date, _time, _address) {
+class FHE(
+    title: String,
+    description: String,
+    date: String,
+    time: String,
+    address: String) : Event(title, description, date, time, address) {
 }

@@ -1,10 +1,17 @@
-package classes.events
+package org.events
 
-import classes.events.Event
+import org.events.Event
 
-class Lecture(var _speaker: String, var _topic: String) : Event(_title, _description, _date, _time, _address) {
-    override fun getDetails(): List<String> {
-        val details = mutableListOf(_title, _description, _date, _time, _address, _speaker, _topic)
+class Lecture(
+    var speaker: String, 
+    var topic: String,
+    title: String,
+    description: String,
+    date: String,
+    time: String,
+    address: String) : Event(title, description, date, time, address) {
+    fun getLectureDetails(): List<String> {
+        val details = mutableListOf(title, description, date, time, address, speaker, topic)
         return details
     }
 }
