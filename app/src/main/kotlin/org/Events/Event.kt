@@ -9,7 +9,7 @@ open class Event (
     var date: String, 
     var time: String, 
     var address: String) {
-    var tasks = mutableListOf<Task>()
+    private var tasks = mutableListOf<Task>()
 
     // Function to add a task to the tasks list. No return variable
     fun addTask(task: Task) {
