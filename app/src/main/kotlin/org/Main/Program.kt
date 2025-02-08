@@ -90,10 +90,7 @@ class Program() {
         val eventAddress = scanner.nextLine()
 
         // Create Event
-        if (eventSelection == "0")
-        {
-            event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
-        } else if (eventSelection == "1")
+        if (eventSelection == "1")
         {
             event = FHE(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
         } else if (eventSelection == "2")
@@ -114,6 +111,8 @@ class Program() {
             val eventCouple = scanner.nextLine()
 
             event = Wedding(eventCouple, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+        } else {
+            event = Event(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
         }
 
         // Get number of tasks
