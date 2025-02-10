@@ -3,8 +3,9 @@ package org.actions
 import kotlin.reflect.KClass
 import org.events.Event
 // Creates Classes (Which go inside the Classes_Built) based on the Event Class (Child classes)
+// Author: Kelson
 
-class Classbuilder {
+class ClassBuilder() {
     private val classes = mutableMapOf<String, KClass<out Event>>()
 
     data class Quintuple<A,B,C,D,E>(
@@ -21,8 +22,6 @@ class Classbuilder {
         val newClass = object : Event(quintuple.first,quintuple.second,quintuple.third,quintuple.fourth,quintuple.fifth) {
             init {
                 attributes.forEach { (key, value) ->
-                    // You can use reflection here if you want to set properties dynamically
-                    // For simplicity, we are just printing the attributes
                     println("$key: $value")
                     }
                 }

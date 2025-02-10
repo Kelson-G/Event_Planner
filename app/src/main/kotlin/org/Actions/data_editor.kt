@@ -1,6 +1,7 @@
 package org.actions
 
 // Something to add emails, names, and other information to the csv file
+// Author: Kelson
 
 import java.io.File
 import java.io.BufferedWriter

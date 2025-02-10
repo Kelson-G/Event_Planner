@@ -21,9 +21,9 @@ repositories {
 
 dependencies {
     // This dependency is used by the application.
-    implementation(libs.guava)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib") // Standard library
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.10") // Reflection library
+    implementation(libs.guava)    
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.0") // Update to the latest version
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.0") // Update to the latest version
 }
 
 testing {
@@ -36,14 +36,20 @@ testing {
     }
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(22)) // Ensure Kotlin targets JDK 23
     }
+}
+
+tasks.jar {
+    exclude("eventplanner.jar") // Adjust the path as necessary
+    exclude("main/main.jar") // Adjust the path as necessary
+    exclude("actions/data_editor.jar") // Adjust the path as necessary
 }
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.AppKt"
+    mainClass.set("org.main.MainKt")
 }
+
